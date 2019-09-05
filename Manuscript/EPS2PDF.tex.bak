@@ -1,0 +1,90 @@
+\documentclass[journal]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{array}
+\ifCLASSOPTIONcompsoc
+  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+  \usepackage[caption=false,font=footnotesize]{subfig}
+\fi
+\usepackage{cite}
+\usepackage{float}
+\usepackage{bm,amssymb,amsthm,amsmath}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{color}
+\definecolor{darkgreen}{rgb}{0, 0.5, 0}
+\usepackage{url,hyperref}
+\usepackage{booktabs,colortbl}
+\usepackage{mfirstuc}
+\usepackage{multirow}
+\usepackage{lettrine}
+\usepackage{pxfonts,mathpazo}
+\usepackage[export]{adjustbox}
+
+\renewcommand\citepunct{, }
+
+%Predefinitions
+\newcommand\etal{\textit{et al.}}
+\newcommand\ie{\textit{i.e.}}
+\newcommand\eg{\textit{e.g.}}
+\newcommand\etc{\textit{etc.}}
+\newcommand\algoabbr{CLIA}
+\newcommand\clusteringprocessfullname{Cascade Clustering}
+\newcommand\clusteringprocessfullnamecased{cascade Clustering}
+\newcommand\learningprocessfullname{Reference Point Incremental Learning}
+\newcommand\learningprocessfullnamecased{reference point incremental Learning}
+\newcommand\titletext{A Many-Objective Evolutionary Algorithm With Two Interacting Processes: \clusteringprocessfullname{} and \learningprocessfullname{}}
+\newcommand\scriptO{\mathcal{O}}
+
+\begin{document}
+\title{\textit{\titletext{}}}
+\author{Hongwei~Ge$^{*}$, Mingde~Zhao$^{*}$,\\
+        Liang Sun, Zhen Wang, Guozhen Tan, Qiang Zhang and C. L. Philip Chen
+\thanks{$^{*}$Equal contribution. This is an UPDATED preprint of \url{https://ieeexplore.ieee.org/document/8485382}. Hongwei Ge, Liang Sun, Guozhen Tan and Qiang Zhang are with the College of Computer Science and Technology, Dalian University of Technology, Dalian, China; Mingde Zhao is in the School of Computer Science, McGill University and Mila (Montr\'eal Institute of Learning Algorithms, Qu\'ebec AI Institute), Montr\'eal, Canada; Z. Wang is with the School of Mathematical Sciences, Dalian University of Technology, Dalian, China; C. L. P. Chen is with the Department of Computer and Information Science, University of Macau, Macau, China.}
+}
+\markboth{UPDATED PREPRINT (20190820)}%
+{GE AND ZHAO \etal{}: \titletext{}}
+\maketitle
+\begin{abstract}
+Researches have shown difficulties in obtaining proximity while maintaining diversity for many-objective optimization problems. Complexities of the true Pareto front pose challenges for the reference vector-based algorithms for their insufficient adaptability to the diverse characteristics with no priors. This paper proposes a many-objective optimization algorithm with two interacting processes: \MakeLowercase{\clusteringprocessfullname{}} and \MakeLowercase{\learningprocessfullname{}} (\algoabbr{}). In the population selection process based on \MakeLowercase{\clusteringprocessfullname{}} (CC), using the reference vectors provided by the process based on incremental learning, the nondominated and the dominated individuals are clustered and sorted with different manners in a cascade style and are selected by round-robin for better proximity and diversity. In the reference vector adaptation process based on \MakeLowercase{\learningprocessfullname{}}, using the feedbacks from the process based on CC, proper distribution of reference points is gradually obtained by incremental learning. Experimental studies on several benchmark problems show that \algoabbr{} is competitive compared with the state-of-the-art algorithms and has impressive efficiency and versatility using only the interactions between the two processes without incurring extra evaluations.
+\end{abstract}
+\begin{IEEEkeywords}
+Clustering, incremental machine learning, interacting processes, many-objective optimization, reference vector.
+\end{IEEEkeywords}
+\IEEEpeerreviewmaketitle
+\bstctlcite{IEEEexample:BSTcontrol}
+
+\section{}
+\begin{figure*}
+\centering
+
+\subfloat[RingWorld, $\alpha = 0.01$, $\kappa = 0.01$]{
+\captionsetup{justification = centering}
+\includegraphics[width=0.48\textwidth]{fig_curves_ringworld_alpha_1e-2_kappa_1e-2.eps}}
+
+\subfloat[RingWorld, $\alpha = 0.01$, $\kappa = 0.01$]{
+\captionsetup{justification = centering}
+\includegraphics[width=0.48\textwidth]{fig_ringworld.eps}}
+
+\subfloat[RingWorld, $\alpha = 0.01$, $\kappa = 0.01$]{
+\captionsetup{justification = centering}
+\includegraphics[width=0.48\textwidth]{fig_curves_frozenlake_alpha_1e-4_kappa_1e-4.eps}}
+
+\subfloat[RingWorld, $\alpha = 0.01$, $\kappa = 0.01$]{
+\captionsetup{justification = centering}
+\includegraphics[width=0.48\textwidth]{fig_frozenlake.eps}}
+
+\subfloat[RingWorld, $\alpha = 0.01$, $\kappa = 0.01$]{
+\captionsetup{justification = centering}
+\includegraphics[width=0.48\textwidth]{fig_curves_mountaincar_alpha_1e-5_eta_1_kappa_1e-5.eps}}
+
+\subfloat[RingWorld, $\alpha = 0.01$, $\kappa = 0.01$]{
+\captionsetup{justification = centering}
+\includegraphics[width=0.48\textwidth]{fig_mountaincar.eps}}
+
+\caption{Two representative sets of learning curves for the two sets of prediction tasks. The buffer period ($10^{4}$ episodes, $10\%$ of the total) are omitted in the learning curves.}
+\label{fig:curves}
+\end{figure*}
+
+\end{document}
